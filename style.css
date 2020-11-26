@@ -1,0 +1,160 @@
+/* my reset css */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: green;
+}
+
+.movie {
+    height: 500px;
+    width: 700px;
+    background: #e7f5fe;
+
+    margin-top: 10px;
+    border: 10px dashed orange;
+    border-radius: 20px;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: sky 40s linear 1;
+}
+.mount {
+    font-size: 130px;
+    text-shadow: -20px 0 forestgreen, 25px -3px green;
+
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    z-index: -4;
+}
+.grass {
+    height: 160px;
+    width: 100%;
+    background: darkgreen;
+
+    clip-path: polygon(0% 20%, 10% 50%, 23% 15%, 33% 45%, 50% 0%, 75% 35%, 95% 5%, 100% 15%, 100% 100%, 0% 100%);
+
+    position: absolute;
+    bottom: 0;
+    z-index: -8;
+}
+
+.fa-space-shuttle {
+    color: indigo;
+    text-shadow: -30px 160px rgba(0, 0, 0, 0.2);
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -3;
+
+    animation: plane 10s linear infinite;
+}
+
+.fa-cloud {
+    color: skyblue;
+    text-shadow: 15px 15px 20px gray;
+
+    position: absolute;
+}
+
+.one {
+    top: 20%;
+    left: 10%;
+    animation: cloud 20s linear infinite alternate;
+    z-index: -5;
+}
+.two {
+    top: 40%;
+    left: 5%;
+    animation: cloud 40s linear infinite alternate-reverse;
+}
+.three {
+    top: 47%;
+    left: 15%;
+    /* animation: cloud 60s linear infinite alternate; */
+    z-index: -9;
+}
+.four {
+    top: 10%;
+    left: 40%;
+    /* animation: cloud 110s linear infinite alternate; */
+    z-index: -7;
+}
+.five {
+    top: 8%;
+    left: 30%;
+    /* animation: cloud 180s linear infinite alternate; */
+    z-index: -7;
+}
+.six {
+    top: 5%;
+    left: 5%;
+    animation: cloud 55s linear infinite alternate-reverse;
+    z-index: -9;
+}
+
+.fa-sun {
+    color: orange;
+    text-shadow: 5px 5px 10px peru, -5px -5px 10px peru;
+
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    z-index: -10;
+
+    animation: sun 60s linear 1, rotate 60s linear infinite;
+}
+
+@keyframes plane {
+    from {
+        bottom: 0;
+        left: 0;
+    }
+    to {
+        top: 25%;
+        left: 90%;
+        /* color: transparent; */
+    }
+}
+
+@keyframes sun {
+    from {
+        top: 350px;
+        left: 10%;
+    }
+    to {
+        top: 20%;
+        left: 70%;
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cloud {
+    100% {
+        left: 80%;
+    }
+}
+
+@keyframes sky {
+    from {
+        background: rgb(57, 57, 173);
+    }
+    to {
+        background: #e7f5fe;
+    }
+}
