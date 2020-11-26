@@ -28,12 +28,12 @@ body {
     overflow: hidden;
 }
 .mount {
-    font-size: 130px;
+    font-size: 132px;
     text-shadow: -20px 0 forestgreen, 25px -3px green;
 
     position: absolute;
     left: 10px;
-    bottom: 0;
+    bottom: -6px;
     z-index: -4;
 }
 .grass {
@@ -82,6 +82,29 @@ body {
 
     animation: balloon 42s 20s infinite;
 }
+.balloon2 {
+    font-size: 40px;
+    text-shadow: 5px 5px 10px gray;
+
+    position: absolute;
+    left: 5%;
+    top: -10%;
+    z-index: -7;
+
+    animation: balloon2 60s 40s infinite alternate;
+}
+
+.invader {
+    font-size: 40px;
+    text-shadow: 5px 5px 10px gray;
+
+    position: absolute;
+    left: 110%;
+    top: 90%;
+    z-index: 1;
+
+    animation: invader 60s 100s 2 alternate;
+}
 
 .fa-cloud {
     color: skyblue;
@@ -127,15 +150,15 @@ body {
 }
 
 .fa-sun {
-    color: orange;
-    text-shadow: 5px 5px 10px peru, -5px -5px 10px peru;
+    color: rgba(212, 193, 20, 0.9);
+    text-shadow: 2px 2px 4px orange, -2px -2px 4px orange;
 
     position: absolute;
     top: 15%;
     left: 75%;
     z-index: -11;
 
-    animation: sun 40s linear 1, rotate 60s linear infinite;
+    animation: sun 40s linear 1, rotate 40s linear infinite;
 }
 
 @keyframes plane {
@@ -153,10 +176,15 @@ body {
     from {
         top: 350px;
         left: 22%;
+        color: orange;
+        text-shadow: 7px 7px 20px orangered, -7px -7px 20px orangered;
     }
     to {
         top: 15%;
         left: 75%;
+
+        color: rgba(212, 193, 20, 0.9);
+        text-shadow: 2px 2px 4px orange, -2px -2px 4px orange;
     }
     100% {
         transform: rotate(180deg);
@@ -199,5 +227,55 @@ body {
     100% {
         top: -25%;
         left: 80%;
+    }
+}
+
+@keyframes balloon2 {
+    0% {
+        top: -10%;
+        left: 5%;
+    }
+    10% {
+        top: 10%;
+        left: 5%;
+    }
+    50% {
+        top: 17%;
+        left: 36%;
+    }
+    75% {
+        top: 5%;
+        left: 60%;
+    }
+    100% {
+        top: 90%;
+        left: 90%;
+    }
+}
+
+@keyframes invader {
+    0% {
+        top: 85%;
+        left: 100%;
+    }
+    40% {
+        top: 86%;
+        left: 69%
+    }
+    65% {
+        top: 73%;
+        left: 58%;
+    }
+    70% {
+        top: 86%;
+        left: 48%;
+    }
+    90% {
+        top: 89%;
+        left: 29%;
+    }
+    100% {
+        top: 110%;
+        left: 29%;
     }
 }
