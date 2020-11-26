@@ -24,6 +24,8 @@ body {
     transform: translateX(-50%);
 
     animation: sky 40s linear 1;
+
+    overflow: hidden;
 }
 .mount {
     font-size: 130px;
@@ -45,59 +47,82 @@ body {
     bottom: 0;
     z-index: -8;
 }
+.mrange {
+    height: 190px;
+    width: 100%;
+    background: darkblue;
+
+    clip-path: polygon(0% 45%, 9% 10%, 20% 40%, 33% 0%, 50% 40%, 75% 5%, 95% 35%, 100% 15%, 100% 100%, 0% 100%);
+
+    position: absolute;
+    bottom: 0;
+    z-index: -9;
+}
 
 .fa-space-shuttle {
     color: indigo;
-    text-shadow: -30px 160px rgba(0, 0, 0, 0.2);
+    text-shadow: -40px 165px 3px rgba(0, 0, 0, 0.2), 3px 3px orange;
 
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     z-index: -3;
 
     animation: plane 10s linear infinite;
 }
 
+.balloon {
+    font-size: 36px;
+    text-shadow: 5px 5px 5px red;
+
+    position: absolute;
+    left: 60%;
+    top: 90%;
+    z-index: -7;
+
+    animation: balloon 42s 20s infinite;
+}
+
 .fa-cloud {
     color: skyblue;
-    text-shadow: 15px 15px 20px gray;
+    text-shadow: 15px 15px 20px gray, -2px -2px 5px white;
 
     position: absolute;
 }
 
 .one {
     top: 20%;
-    left: 10%;
-    animation: cloud 20s linear infinite alternate;
+    left: -25%;
+    animation: cloud 20s linear infinite alternate-reverse;
     z-index: -5;
 }
 .two {
     top: 40%;
-    left: 5%;
-    animation: cloud 40s linear infinite alternate-reverse;
+    left: -25%;
+    animation: cloud 40s ease-in infinite;
 }
 .three {
     top: 47%;
-    left: 15%;
+    left: 10%;
     /* animation: cloud 60s linear infinite alternate; */
     z-index: -9;
 }
 .four {
-    top: 10%;
-    left: 40%;
+    top: 8%;
+    left: 37%;
     /* animation: cloud 110s linear infinite alternate; */
     z-index: -7;
 }
 .five {
-    top: 8%;
-    left: 30%;
+    top: 6%;
+    left: 28%;
     /* animation: cloud 180s linear infinite alternate; */
     z-index: -7;
 }
 .six {
-    top: 5%;
-    left: 5%;
-    animation: cloud 55s linear infinite alternate-reverse;
+    top: 3%;
+    left: -25%;
+    animation: cloud 60s linear infinite alternate-reverse;
     z-index: -9;
 }
 
@@ -106,33 +131,32 @@ body {
     text-shadow: 5px 5px 10px peru, -5px -5px 10px peru;
 
     position: absolute;
-    top: 20%;
-    left: 70%;
-    z-index: -10;
+    top: 15%;
+    left: 75%;
+    z-index: -11;
 
-    animation: sun 60s linear 1, rotate 60s linear infinite;
+    animation: sun 40s linear 1, rotate 60s linear infinite;
 }
 
 @keyframes plane {
     from {
-        bottom: 0;
-        left: 0;
+        top: 50%;
+        left: -20%;
     }
     to {
-        top: 25%;
-        left: 90%;
-        /* color: transparent; */
+        top: 20%;
+        left: 120%;
     }
 }
 
 @keyframes sun {
     from {
         top: 350px;
-        left: 10%;
+        left: 22%;
     }
     to {
-        top: 20%;
-        left: 70%;
+        top: 15%;
+        left: 75%;
     }
     100% {
         transform: rotate(180deg);
@@ -146,7 +170,7 @@ body {
 
 @keyframes cloud {
     100% {
-        left: 80%;
+        left: 110%;
     }
 }
 
@@ -156,5 +180,24 @@ body {
     }
     to {
         background: #e7f5fe;
+    }
+}
+
+@keyframes balloon {
+    0% {
+        top: 90%;
+        left: 60%;
+    }
+    20% {
+        top: 50%;
+        left: 35%;
+    }
+    50% {
+        top: 27%;
+        left: 50%;
+    }
+    100% {
+        top: -25%;
+        left: 80%;
     }
 }
