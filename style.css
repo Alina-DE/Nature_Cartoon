@@ -11,10 +11,10 @@ body {
 }
 
 .movie {
-    width: 75%;
-    max-width: 700px;
-    height: 90vh;
-    max-height: 500px;
+    /* width: 75%; */
+    width: 700px;
+    /* height: 90vh; */
+    height: 500px;
 
     background: #e7f5fe;
 
